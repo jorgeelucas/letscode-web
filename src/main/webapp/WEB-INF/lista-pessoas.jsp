@@ -14,17 +14,29 @@
         <h3> ${ titulo } </h3>
 
         <% List<Pessoa> pessoas = (List<Pessoa>) request.getAttribute("pessoas"); %>
-        <%
-            for(Pessoa pessoa : pessoas) {
-            %>
-            <ul>
-            <li>nome: <%= pessoa.getNome() %></li>
-            <li>sobrenome: <% out.println(pessoa.getSobrenome()); %></li>
-            <li>idade: <%= pessoa.getIdade() %></li>
-            <li>data: <%= pessoa.getData() %> </li>
-            </ul>
+
+        <table width="500" border="1px">
+            <tr>
+                <th>NOME</th>
+                <th>SOBRENOME</th>
+                <th>IDADE</th>
+                <th>DATA</th>
+            </tr>
             <%
-            }
-        %>
+                for(Pessoa pessoa : pessoas) {
+            %>
+            <tr>
+                <td><%= pessoa.getNome() %></td>
+                <td><%= pessoa.getSobrenome() %></td>
+                <td><%= pessoa.getIdade() %></td>
+                <td><%= pessoa.getData() %></td>
+            </tr>
+            <%
+                }
+            %>
+        </table>
+        <button onclick="window.location.href='/app/controlador?acao=cadastrar-pessoas-form'">
+            CADASTRAR NOVO
+        </button>
     </body>
 </html>

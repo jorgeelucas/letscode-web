@@ -5,9 +5,16 @@
         <title>JSP - Hello World</title>
     </head>
     <body>
-        <h1><%= "Hello World!" %>
+        <h1><%= "APP de Pessoas" %>
         </h1>
         <br/>
-        <a href="hello-servlet">Hello Servlet</a>
+        <ul>
+            <li>
+                <a href="/app/controlador?acao=cadastrar-pessoas-form">Cadastrar pessoa</a>
+            </li>
+            <li>
+                <a href="/app/controlador?acao=listar-pessoas">Listar pessoas</a>
+            </li>
+        </ul>
     </body>
 </html>
